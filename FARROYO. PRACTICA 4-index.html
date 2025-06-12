@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portada del Proyecto</title>
+    <link rel="stylesheet" type="text/css" href="estilos4.css">
+</head>
+<body>
+
+    <h1>Mi Proyecto de Programación</h1>
+    <p>Escuela: CECYTEM 35</p>
+    <p>Nombre: Fernanda Arroyo</p>
+    <p>Materia: Módulo III. Submódulo II</p>
+    <p>Grupo: 430</p>
+
+    <!-- Fecha y Reloj aquí -->
+    <div id="date"></div>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            const day = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Meses empiezan en 0
+            const year = now.getFullYear();
+
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('date').textContent = `${day}/${month}/${year}`;
+        }
+
+        setInterval(updateClock, 1000); // Actualiza cada segundo
+        updateClock(); // Inicializa el reloj inmediatamente
+    </script>
+    <a href="FARROYO. PRACTICA 5-index.html">Convertidor de longuitud</a>
+</body>
+</html>
